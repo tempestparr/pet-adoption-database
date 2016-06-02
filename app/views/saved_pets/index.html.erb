@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Saved Pets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saved_pets.each do |saved_pet| %>
+      <tr>
+        <td><%= saved_pet.email %></td>
+        <td><%= saved_pet.pet_id %></td>
+        <td><%= saved_pet.application_id %></td>
+        <td><%= saved_pet.appointment_id %></td>
+        <br>
+        <br>
+        <td><%= link_to 'Show', saved_pet %></td>
+        <td><%= link_to 'Edit', edit_saved_pet_path(saved_pet) %></td>
+        <td><%= link_to 'Destroy', saved_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Saved pet', new_saved_pet_path %>

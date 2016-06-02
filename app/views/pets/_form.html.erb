@@ -1,0 +1,32 @@
+<%= form_for(@pet) do |f| %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.label :business_id, "Business Name" %>
+    <%= f.select :business_id, Business.all.map {|business| [business.name, business.id]}, {}, { class: "btn btn-default btn-md" }%>
+
+    <%= f.label :pet_name, "Pet Name" %>
+    <%= f.text_field :pet_name %>
+    
+    <%= f.label :pet_type, "Type" %>
+    <%= f.select :pet_type, ['Dog','Cat'], {}, { class: "btn btn-default btn-md" }%>
+    
+    <%= f.label :age, "Age" %>
+    <%= f.select :age, ['Baby','Young', 'Adult', 'Senior'], {}, { class: "btn btn-default btn-md" }%>
+    
+    <%= f.label :gender, "Gender" %>
+    <%= f.select :gender, ['Male','Female'], {}, { class: "btn btn-default btn-md" }%>
+    
+    <%= f.submit 'Submit', class: 'button' %>
+  </div>
+<% end %>

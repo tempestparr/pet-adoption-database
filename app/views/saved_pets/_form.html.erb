@@ -1,0 +1,26 @@
+<%= form_for(@saved_pet) do |f| %>
+  <% if @saved_pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saved_pet.errors.count, "error") %> prohibited this saved_pet from being saved:</h2>
+
+      <ul>
+      <% @saved_pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.email %></div>
+<% end %>
+    
+    <%= f.label :pet_id, "Pet Name" %>
+    <%= f.select :pet_id, Pet.all.map {|pet| [pet.pet_name, pet.id]}, {}, { class: "btn btn-default btn-md" }%>
+
+
+    
+    <%= f.submit 'Submit', class: 'button' %>
+  </div>
+<% end %>
