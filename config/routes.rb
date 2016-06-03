@@ -51,5 +51,12 @@ Rails.application.routes.draw do
   # saved_pets pages
   post 'saved_pets' => 'saved_pets#new'
   get 'new_saved_pets' => 'saved_pets#new'
-  get 'saved_pets' => 'saved_pets#index'
+  get 'saved_pets' => 'saved_pets#userIndex'
+  
+  # appointments pages
+  post 'appointments' => 'appointments#create'
+  get 'appointments' => 'appointments#new'
+  get 'apps' => 'appointments#index'
+  
+  
 end
