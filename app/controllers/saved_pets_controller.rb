@@ -11,6 +11,10 @@ class SavedPetsController < ApplicationController
   # GET /saved_pets/1.json
   def show
   end
+  
+  def userIndex
+    @saved_pets = SavedPet.where(:user_email => find(current_user).email)
+  end
 
   # GET /saved_pets/new
   def new

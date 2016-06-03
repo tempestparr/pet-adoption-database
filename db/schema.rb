@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160509215758) do
 
+
   create_table "applications", force: :cascade do |t|
     t.integer  "user",   limit: 4
     t.integer  "pet_id", limit: 4
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160509215758) do
     t.integer "user",   limit: 4, default: 0, null: false
     t.integer "pet_id", limit: 4, default: 0, null: false
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
