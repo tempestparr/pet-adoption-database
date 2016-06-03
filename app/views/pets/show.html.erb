@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= @pet.business_id %>
-<%= @pet.pet_id %>
+<%= Business.find(@pet.business_id).name %>
 <%= @pet.pet_name %>
-<%= @pet.pet_type %>
+<%= @pet.type %>
 <%= @pet.age %>
 <%= @pet.gender %>
 

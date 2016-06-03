@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= User.find(current_user).email%>
+<%= Pet.find(@saved_pet.id).pet_name %>
+
 <%= link_to 'Edit', edit_saved_pet_path(@saved_pet) %> |
 <%= link_to 'Back', saved_pets_path %>

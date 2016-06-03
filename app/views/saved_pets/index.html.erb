@@ -10,12 +10,11 @@
   </thead>
 
   <tbody>
-     <% @saved_pets.where(:user_email => current_user.email) do |saved_pet| %>
+     <% @saved_pets.where(:user => current_user) do |saved_pet| %>
       <tr>
-        <td><%= saved_pet.email %></td>
-        <td><%= saved_pet.pet_id %></td>
-        <td><%= saved_pet.application_id %></td>
-        <td><%= saved_pet.appointment_id %></td>
+        <td><%= User.find(saved_pet.user).email%></td>
+        <td><%= Pet.find(pet_id).pet_name %></td>
+
         <br>
         <br>
         <td><%= link_to 'Show', saved_pet %></td>

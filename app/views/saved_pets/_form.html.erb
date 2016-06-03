@@ -11,15 +11,7 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
-  <div class="actions">
-    <% if user_signed_in? %>
-      <div>Signed in as... <%= current_user.email %></div>
-    <% end %>
-=======
->>>>>>> dd2204c9f062c559fcfee330223b7f11cbe6b773
-    
-    <%= f.hidden_field :user_email, :value => current_user.email %>
+    <%= f.hidden_field :user, :value => current_user %>
     <%= f.label :pet_id, "Pet Name" %>
     <%= f.select :pet_id, Pet.all.map {|pet| [pet.pet_name, pet.id]}, { class: "btn btn-default btn-md" }%>
 
