@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    <%= f.hidden_field :user, :value => current_user %>
+    <%= f.hidden_field :user, :value => current_user.id %>
     <%= f.label :pet_id, "Pet Name" %>
     <%= f.select :pet_id, Pet.all.map {|pet| [pet.pet_name, pet.id]}, { class: "btn btn-default btn-md" }%>
 

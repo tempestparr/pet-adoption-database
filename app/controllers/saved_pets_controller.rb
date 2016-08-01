@@ -13,7 +13,8 @@ class SavedPetsController < ApplicationController
   end
   
   def userIndex
-    @saved_pets = SavedPet.where(:user_email => find(current_user).email)
+
+    @saved_pet = SavedPet.where(:user => current_user.id).all
   end
 
   # GET /saved_pets/new

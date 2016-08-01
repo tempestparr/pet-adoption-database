@@ -37,9 +37,8 @@ ActiveRecord::Schema.define(version: 20160509215758) do
   end
 
   create_table "donations", force: :cascade do |t|
-    t.float    "amount",      limit: 53
-    t.datetime "date"
-    t.integer  "business_id", limit: 4
+    t.float    "amount", limit: 53
+    t.datetime "date",              null: false
   end
 
   create_table "images", primary_key: "pet_id", force: :cascade do |t|

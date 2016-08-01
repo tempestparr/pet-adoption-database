@@ -2,18 +2,23 @@
 
 <h1>Listing Images</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+    <tr>
+      <th>Pet ID</th>
+      <th>Image</th>
+    </tr>
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= image.pet_id %></td>
-        <td><%= image.url %></td>
+        <td><%= image.pet_id %> </td>
+        <td><img src="<%= image.url %>"></td>
+
         <br>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>

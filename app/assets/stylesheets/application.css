@@ -32,3 +32,15 @@ footer {
 .footer {
     display: inline-block;
 }
+
+.jumbotron {
+  background: url(/pet.jpeg) no-repeat center center;
+  background-size: cover;
+  color: #ccccff;
+  height: 50vh; 
+  margin-bottom: 5em }
+  
+.navbar-right {
+ padding-top: 10px; 
+}
+

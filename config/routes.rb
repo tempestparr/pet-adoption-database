@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :pets
   resources :images
   resources :saved_pets
+  resources :appointments
   
   devise_scope :user do
   get "/login" => "devise/sessions#new"
@@ -51,12 +52,20 @@ Rails.application.routes.draw do
   # saved_pets pages
   post 'saved_pets' => 'saved_pets#new'
   get 'new_saved_pets' => 'saved_pets#new'
-  get 'saved_pets' => 'saved_pets#userIndex'
+  get 'saved' => 'saved_pets#userIndex'
   
   # appointments pages
   post 'appointments' => 'appointments#create'
   get 'appointments' => 'appointments#new'
   get 'apps' => 'appointments#index'
   
+  # applications pages
+  post 'applications' => 'applications#create'
+  get 'applications' => 'applications#new'
+  get 'appts' => 'applications#index'
   
+  # pet_breeds pages
+  post 'pet_breeds' => 'pet_breeds#create'
+  get 'pet_breeds' => 'pet_breeds#new'
+  get 'pet_breeds' => 'pet_breeds#index'
 end

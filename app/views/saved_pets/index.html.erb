@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Saved Pets</h1>
+<h1>fdsfsd Saved Pets</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
   <tbody>
      <% @saved_pets.where(:user => current_user) do |saved_pet| %>
       <tr>
-        <td><%= User.find(saved_pet.user).email%></td>
+        <td><%= User.find(current_user).email %></td>
         <td><%= Pet.find(pet_id).pet_name %></td>
 
         <br>

@@ -19,13 +19,13 @@
     <%= f.text_field :pet_name %>
     
     <%= f.label :type, "Type" %>
-    <%= f.select :type, ['Dog','Cat'], {}, { class: "btn btn-default btn-md" }%>
+    <%= f.select :type, [['Dog', 0],['Cat', 1]], {}, { class: "btn btn-default btn-md" }%>
     
     <%= f.label :age, "Age" %>
-    <%= f.select :age, ['Baby','Young', 'Adult', 'Senior'], {}, { class: "btn btn-default btn-md" }%>
+    <%= f.select :age, [['Baby', 0], ['Young', 1], ['Adult', 2], ['Senior', 3]], {}, { class: "btn btn-default btn-md" }%>
     
     <%= f.label :gender, "Gender" %>
-    <%= f.select :gender, ['Male','Female'], {}, { class: "btn btn-default btn-md" }%>
+    <%= f.select :gender, [['Male', 0],['Female', 1]], {}, { class: "btn btn-default btn-md" }%>
     
     <%= f.submit 'Submit', class: 'button' %>
   </div>

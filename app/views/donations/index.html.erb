@@ -2,17 +2,22 @@
 
 <h1>Listing Donations</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+    <tr>
+      <th>Donation ID</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
-        <td><%= donation.donation_id %></td>
+        <td><%= donation.id %></td>
         <td><%= donation.amount %></td>
         <td><%= donation.date %></td>
       </tr>
